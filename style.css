@@ -5,4 +5,53 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Rubik;
+    cursor: none;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+ul{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    list-style: none;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 42px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
+
+.cursor-div{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    mix-blend-mode: difference;
+}
+
+ul li:hover ~ .cursor-div{
+    background: #000;
+    transform: translate(-50%,-50%) scale(4);
+    box-shadow: 0 0 0 100vh #fff;
+}
+
+
